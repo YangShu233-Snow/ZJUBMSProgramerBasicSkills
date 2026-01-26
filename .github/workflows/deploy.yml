@@ -1,0 +1,32 @@
+name: Deploy MkDocs
+on:
+  push:
+    branches:
+      - main  # 只有当 main 分支有变动时才触发
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          # 如果你没有 requirements.txt，可以直接在此安装主题
+          # pip install mkdocs-material
+
+      - name: Build and Deploy
+        run: |
+          # 使用 mkdocs-gh-deploy 自动完成构建并推送到 gh-pages 分支
+          mkdocs gh-deploy --force

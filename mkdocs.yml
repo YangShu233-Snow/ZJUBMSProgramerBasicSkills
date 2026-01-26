@@ -1,0 +1,62 @@
+site_name: 浙大基医er的计算机技能课外书
+use_directory_urls: false
+repo_name: YangShu233-Snow/ZJUBMSProgramerBasicSkills
+repo_url: https://github.com/YangShu233-Snow/ZJUBMSProgramerBasicSkills
+copyright: Copyright &copy; 2026 YangShu233-Snow，保留一切权利
+
+nav:
+  - 主页:
+    - index.md
+  - 第一章:
+    - 灯下黑——你真的了解计算机的文件系统吗？: chapter1/chapter1.md
+
+theme:
+  name: material
+  favicon: images/favicon.pub/favicon.ico
+  custom_dir: overrides
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    logo: material/notebook-outline
+  features:
+    - navigation.sections       # 保持侧边栏的折叠/展开功能
+    - navigation.instant        # 启用即时加载（可选，提升体验）
+    - navigation.tracking       # 启用页面追踪，自动高亮当前页面
+    - navigation.top            # 页面滚动时显示返回顶部的按钮（可选）
+    - search.suggest            # 搜索建议
+    - search.highlight          # 搜索结果高亮
+    - content.tabs              # 允许在内容中使用标签页（如果你用到了）
+    - content.code.copy         # 代码块复制按钮（如果你用到了）
+    - content.code.annotate     # 代码块注解（如果你用到了）
+    - navigation.tabs.sticky
+
+plugins:
+  - search:
+      lang: zh
+      separator: '[\s\-]+'
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - mdx_truly_sane_lists
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      # linenums: true # 如果需要显示行号，可以取消这一行的注释
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - md_in_html
