@@ -9,6 +9,7 @@ nav:
     - index.md
   - 第一章:
     - 灯下黑——你真的了解计算机的文件系统吗？: chapter1/chapter1.md
+    - 终端与命令行——可是我真的不是黑客！: chapter2/chapter2.md
 
 theme:
   name: material
